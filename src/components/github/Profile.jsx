@@ -17,10 +17,23 @@ class Profile extends Component{
               <div className="col-md-8">
                   <div className="row">
                       <div className="col-md-12">
-                          <span className="label label-primary">{this.props.userData.public_repos}</span>
+                          <span className="label label-primary">{this.props.userData.public_repos} Repos</span>
+                          <span className="label label-success">{this.props.userData.public_gists} Public gists</span>
+                          <span className="label label-info">{this.props.userData.followers} Followers</span>
+                          <span className="label label-danger">{this.props.userData.following} Following</span>
                       </div>
                   </div>
+                  <hr />
+                  <div className="col-md-12">
+                      <ul className="list-group">
+                        <li className="list-group-item"><strong>Username: </strong> {this.props.userData.login}</li>
+                        <li className="list-group-item"><strong>Location: </strong> {this.props.userData.location}</li>
+                        <li className="list-group-item"><strong>Email Address: </strong> {this.props.userData.email}</li>
+                      </ul>
+                  </div>
               </div>
+              <br />
+              <a className="btn btn-primary" target="_blank" href={this.props.userData.html_url}>Visit actual Profile</a>
             </div>
         </div>
       </div>
