@@ -6,5 +6,3 @@ ReactDOM.render(
     <App />,
     document.getElementById('app')
 );
-
-alert('by jove it works')

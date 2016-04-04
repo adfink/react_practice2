@@ -9,7 +9,7 @@ class App extends Component{
             username: 'adfink',
             userData: [],
             userRepos: [],
-            perPage: 5
+            perPage: 10
         }
     }
 
@@ -34,7 +34,7 @@ class App extends Component{
     // get user repos from github
     getUserRepos(){
         $.ajax({
-            url: 'https://api.github.com/users/'+this.state.username+'/repos?per_page'+this.state.perPage+'&client_id='+this.props.clientId+'&client_secret='+this.props.clientSecret+'&sort=created',
+            url: 'https://api.github.com/users/'+this.state.username+'/repos?per_page='+this.state.perPage+'&client_id='+this.props.clientId+'&client_secret='+this.props.clientSecret+'&sort=created',
             dataType: 'json',
             cache: false,
             success: function(data){
@@ -58,7 +58,7 @@ class App extends Component{
   render(){
       return(
         <div>
-            <Profile userData = {this.state.userData} />
+            <Profile {...this.state} />
         </div>
       )
   }
